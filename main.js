@@ -1,13 +1,14 @@
 var pageCounter = 1;
 var moduleContainer = document.getElementById('module-info');
 var btn = document.getElementById("btn");
+var ourData;
 
 btn.addEventListener("click", function(){
   var ourRequest = new XMLHttpRequest();
   ourRequest.open('GET', 'https://raw.githubusercontent.com/profharimohanpandey/CW2/master/module-'+ pageCounter +'.json');
   ourRequest.onload = function(){
     //console.log(ourRequest.responseText);
-    var ourData = JSON.parse(ourRequest.responseText);
+    ourData = JSON.parse(ourRequest.responseText);
     //console.log(ourData[0]);
     renderHTML(ourData);
   };
@@ -61,4 +62,15 @@ function renderHTML(data){
   }
   moduleContainer.insertAdjacentHTML('beforeend', htmlString);
 
+}
+
+function passwordCheck() {
+   var confirmPassword = "admin";
+   var password = document.getElementById("loginPass").value;
+   if (password == confirmPassword) {
+        window.location="index.html";
+   }
+   else{
+       alert("Incorrect password.");
+   }
 }
