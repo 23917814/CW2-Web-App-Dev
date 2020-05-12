@@ -2,14 +2,32 @@
 <head>
   <meta name ="viewport" content="width=device-width, initial-scale=1"/>
     <title>Coursework2_WebApp</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
   </head>
-<body>
+<body class="generalText">
 
   <header>
+    <button><a href="index.html">Home</a></button>
     <h1>Degree Programmes</h1>
-    <button><a href="index.html">Home</button>
   </header>
+
+  <h2> Add a new Degree Programme </h2>
+  <form action>
+    <label for="dID">Degree ID</label><br>
+    <input type="text" id="dID" name="dID"><br>
+
+    <label for="dName">Degree Name</label><br>
+    <input type="text" id="dName" name="dName"><br>
+
+    <label for="dLO">Learning Outcomes</label><br>
+    <input type="text" id="dLO" name="dLO"><br>
+
+    <label for="dEA">Exit Awards</label><br>
+    <input type="text" id="dEA" name="dEA"><br>
+
+    <input type="submit" value="Submit">
+  </form>
 
   <script src="main.js"></script>
 </body>

@@ -2,16 +2,17 @@
 <head>
   <meta name ="viewport" content="width=device-width, initial-scale=1"/>
     <title>Coursework2_WebApp</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
   </head>
-<body>
+<body class="centered">
 
   <header>
-    <h1>Login</h1>
+    <h1 class="generalText">Login</h1>
     <form action>
-      <label for="username">Username: </label><br>
+      <label for="username" class="generalText">Username: </label><br>
       <input type="text" id="username" name="username"><br>
-      <label for="loginPass">Password: </label><br>
+      <label for="loginText" class="generalText">Password: </label><br>
       <input type="password" id="loginPass" name="password">
       <input type="button" value="Submit" onclick="passwordCheck();">
     </form>
