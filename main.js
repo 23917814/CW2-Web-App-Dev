@@ -1,14 +1,15 @@
 var pageCounter = 1;
 var moduleContainer = document.getElementById('module-info');
+var dpContainer = document.getElementById('dptest');
 var btn = document.getElementById("btn");
-var ourData;
+var btn2 = document.getElementById("btn2");
 
 btn.addEventListener("click", function(){
   var ourRequest = new XMLHttpRequest();
   ourRequest.open('GET', 'https://raw.githubusercontent.com/profharimohanpandey/CW2/master/module-'+ pageCounter +'.json');
   ourRequest.onload = function(){
     //console.log(ourRequest.responseText);
-    ourData = JSON.parse(ourRequest.responseText);
+    var ourData = JSON.parse(ourRequest.responseText);
     //console.log(ourData[0]);
     renderHTML(ourData);
   };
@@ -19,6 +20,19 @@ if (pageCounter > 3){
   btn.disabled = true;
 }
 });
+
+btn2.addEventListener("click", function(){
+  var ourRequest2 = new XMLHttpRequest();
+  ourRequest2.open('GET', 'https://raw.githubusercontent.com/23917814/testing/degreeprogrammes.json');
+  ourRequest2.onload = function(){
+    //console.log(ourRequest.responseText);
+    var ourData2 = JSON.parse(ourRequest.responseText);
+    //console.log(ourData[0]);
+    renderHTML2(ourData2);
+  };
+  ourRequest2.send();
+});
+
 
 function renderHTML(data){
   var htmlString = "";
@@ -65,12 +79,16 @@ function renderHTML(data){
 }
 
 function passwordCheck() {
-   var confirmPassword = "admin";
+   var confirmPassword = "academic";
+   var adminPassword = "admin"
    var password = document.getElementById("loginPass").value;
    if (password == confirmPassword) {
         window.location="index.html";
    }
-   else{
+   else if (password == adminPassword){
+     window.location="adminindex.html";
+   }
+     else {
        alert("Incorrect password.");
    }
 }
